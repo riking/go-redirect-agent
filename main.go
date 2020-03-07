@@ -10,7 +10,6 @@ import (
 
 // "go" = 103 111
 var listenAddr = flag.String("listen", "127.0.103.111:80", "ipv4 listen address")
-var listenAddr6 = flag.String("listen6", "[fd00:6874:7470:676f::1]:80", "ipv6 listen address")
 var destination = flag.String("d", "", "redirect destination for go links")
 var destGolinks = flag.Bool("golinks", false, "use www.golinks.io")
 
@@ -49,17 +48,6 @@ func main() {
 		http.Redirect(w, r, u.String(), 302)
 	})
 
-	exitCh := make(chan struct{})
-
-	go func() {
-		err = http.ListenAndServe(*listenAddr, nil)
-		log.Fatalln(err)
-		exitCh <- struct{}{}
-	}()
-	go func() {
-		err = http.ListenAndServe(*listenAddr6, nil)
-		log.Println(err)
-	}()
-
-	<-exitCh
+	err = http.ListenAndServe(*listenAddr, nil)
+	log.Fatalln(err)
 }
