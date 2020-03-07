@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 	"net/url"
+	"path"
 )
 
 // "go" = 103 111
@@ -26,11 +27,22 @@ func main() {
 	if err != nil {
 		log.Fatalln("could not parse destination url:", err)
 	}
+	tmplHasPath := false
+	if destTmpl.Path != "" && destTmpl.Path != "/" {
+		tmplHasPath = true
+	}
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		u := *destTmpl
-		u.Path = r.URL.Path
-		u.RawPath = r.URL.RawPath
+		if tmplHasPath {
+			u.Path = path.Join(u.Path, r.URL.Path)
+			if r.URL.RawPath != "" {
+				u.RawPath = path.Join(u.Path, r.URL.RawPath)
+			}
+		} else {
+			u.Path = r.URL.Path
+			u.RawPath = r.URL.RawPath
+		}
 		u.RawQuery = r.URL.RawQuery
 
 		http.Redirect(w, r, u.String(), 302)
