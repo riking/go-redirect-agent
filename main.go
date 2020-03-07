@@ -2,7 +2,6 @@ package main
 
 import (
 	"flag"
-	"fmt"
 	"log"
 	"net/http"
 	"net/url"
@@ -37,5 +36,6 @@ func main() {
 		http.Redirect(w, r, u.String(), 302)
 	})
 
-	http.ListenAndServe(*listenAddr, nil)
+	err = http.ListenAndServe(*listenAddr, nil)
+	log.Fatalln(err)
 }
