@@ -16,8 +16,8 @@ var destGolinks = flag.Bool("golinks", false, "use www.golinks.io")
 func main() {
 	flag.Parse()
 
-	if *destGolinks && *destination == "" {
-		*destination = "https://www.golinks.io"
+	if *destGolinks {
+		*destination = "https://www.golinks.io/"
 	}
 	if *destination == "" {
 		log.Fatalln("go link handler not set, provide a -d argument")
