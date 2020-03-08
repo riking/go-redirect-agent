@@ -4,9 +4,14 @@ Small go agent binary for running on a system to redirect http://go/ links to a 
 
 By default, the agent will listen on `127.0.103.111`. It will not listen on the IPv6 loopback interface as you might want to run other programs on port 80. (103 and 111 are the decimal ASCII codes for 'g' 'o'.)
 
+All requests are redirected to the secure URL the agent is configured with. This ensures that plaintext HTTP requests never leave your machine.
+
 ## Install
 
-### Windows
+ * [Windows](#windows)
+ * [Unix (systemd)](#unix-systemd)
+
+### Windows {#windows}
 
 Download a release and unzip it into Downloads/go-redirect-agent or another location as you prefer.
 
@@ -32,7 +37,7 @@ PS C:\Users\You\Downloads\go-redirect-agent> .\go-redirect-agent.exe start
 PS C:\Users\You\Downloads\go-redirect-agent> .\install_windows.bat
 ```
 
-### Unix (systemd)
+### Unix (systemd) {#unix-systemd}
 
 Use `go get` to compile the binary: `go get -v github.com/riking/go-redirect-agent` or download a compiled version and set `AGENT_BIN` to its path.
 
