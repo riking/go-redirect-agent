@@ -7,5 +7,27 @@ listen on the IPv6 loopback interface as you might want to run other programs on
 
 ## Install
 
-Use the install\_unix.sh or install\_windows.bat file to add the hosts entry.
+### Windows
 
+Download a release and unzip it into Downloads/go-redirect-agent or another location as you prefer.
+
+Open an elevated PowerShell prompt.
+
+[image-powershell-runas]
+
+```ps
+PS C:\Windows\system32>  cd (gci env:USERPROFILE).Value
+PS C:\Users\You> cd Downloads\go-redirect-agent
+
+# Choose one of the following:
+
+PS C:\Users\You\Downloads\go-redirect-agent> .\go-redirect-agent.exe --golinks install
+
+PS C:\Users\You\Downloads\go-redirect-agent> .\go-redirect-agent.exe -d https://goto.contoso.com/ install
+
+PS C:\Users\You\Downloads\go-redirect-agent> .\go-redirect-agent.exe -d https://subdomain.site.com/go/ install
+
+# ... Then, install the hosts file entry:
+
+PS C:\Users\You\Downloads\go-redirect-agent> .\install_windows.bat
+```
