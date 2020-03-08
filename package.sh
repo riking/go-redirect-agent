@@ -15,6 +15,7 @@ mkdir build/go-redirect-agent
 
 echo "build windows.amd64"
 GOOS=windows GOARCH=amd64 go build -o build/go-redirect-agent/go-redirect-agent .
+cp hosts_windows.bat build/go-redirect-agent/hosts_windows.bat
 (cd build; zip -r ../target/go-redirect-agent.windows.amd64.zip go-redirect-agent/ )
 
 rm -r build/go-redirect-agent

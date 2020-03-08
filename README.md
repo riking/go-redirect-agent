@@ -34,7 +34,7 @@ PS C:\Users\You\Downloads\go-redirect-agent> .\go-redirect-agent.exe -d https://
 # ... Then, install the hosts file entry:
 
 PS C:\Users\You\Downloads\go-redirect-agent> .\go-redirect-agent.exe start
-PS C:\Users\You\Downloads\go-redirect-agent> .\install_windows.bat
+PS C:\Users\You\Downloads\go-redirect-agent> .\hosts_windows.bat
 ```
 
 ### Unix (systemd)
