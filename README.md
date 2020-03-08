@@ -11,7 +11,7 @@ All requests are redirected to the secure URL the agent is configured with. This
  * [Windows](#windows)
  * [Unix (systemd)](#unix-systemd)
 
-### Windows {#windows}
+### Windows
 
 Download a release and unzip it into Downloads/go-redirect-agent or another location as you prefer.
 
@@ -37,7 +37,7 @@ PS C:\Users\You\Downloads\go-redirect-agent> .\go-redirect-agent.exe start
 PS C:\Users\You\Downloads\go-redirect-agent> .\install_windows.bat
 ```
 
-### Unix (systemd) {#unix-systemd}
+### Unix (systemd)
 
 Use `go get` to compile the binary: `go get -v github.com/riking/go-redirect-agent` or download a compiled version and set `AGENT_BIN` to its path.
 
