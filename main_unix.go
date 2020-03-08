@@ -9,7 +9,7 @@ import (
 )
 
 // "go" = 103 111
-var listenAddr = flag.String("listen", "127.0.103.111:80", "ipv4 listen address")
+var listenAddr = flag.String("l", "127.0.103.111:80", "ipv4 listen address")
 var destination = flag.String("d", "", "redirect destination for go links")
 var destGolinks = flag.Bool("golinks", false, "use www.golinks.io")
 
