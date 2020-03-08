@@ -82,4 +82,4 @@ systemctl start go-redirect-agent
 exit # the sudo'ed shell
 ```
 
-[latest-release]: https://github.com/riking/go-redirect-agent/releases/tag/v1.0.0
+[latest-release]: https://github.com/riking/go-redirect-agent/releases/tag/v1.0.1
