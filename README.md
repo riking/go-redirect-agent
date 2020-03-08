@@ -15,6 +15,14 @@ All requests are redirected to the secure URL the agent is configured with. This
 
 Download a [release][latest-release] and unzip it into Downloads/go-redirect-agent or another location as you prefer.
 
+Before starting to install, test out your settings by running it as your user:
+
+```
+PS C:\Users\You\Downloads\go-redirect-agent> .\go-redirect-agent.exe -d https://goto.contoso.com/ debug
+```
+
+Ensure that http://go/test redirects you to https://goto.contoso.com/test correctly.
+
 Open an elevated PowerShell prompt.
 
 [image-powershell-runas]
