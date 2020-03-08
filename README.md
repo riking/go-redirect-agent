@@ -13,7 +13,7 @@ All requests are redirected to the secure URL the agent is configured with. This
 
 ### Windows
 
-Download a release and unzip it into Downloads/go-redirect-agent or another location as you prefer.
+Download a [release][latest-release] and unzip it into Downloads/go-redirect-agent or another location as you prefer.
 
 Open an elevated PowerShell prompt.
 
@@ -39,7 +39,7 @@ PS C:\Users\You\Downloads\go-redirect-agent> .\install_windows.bat
 
 ### Unix (systemd)
 
-Use `go get` to compile the binary: `go get -v github.com/riking/go-redirect-agent` or download a compiled version and set `AGENT_BIN` to its path.
+Use `go get` to compile the binary: `go get -v github.com/riking/go-redirect-agent` or download a [compiled version][latest-release] and set `AGENT_BIN` to its path.
 
 Set `AGENT_HOST` to the secure server path hosting the go link redirection service, e.g. `AGENT_HOST=https://subdomain.site.com/go/` , or leave blank to use golinks.io.
 
@@ -81,3 +81,5 @@ systemctl start go-redirect-agent
 
 exit # the sudo'ed shell
 ```
+
+[latest-release]: https://github.com/riking/go-redirect-agent/releases/tag/v1.0.0
