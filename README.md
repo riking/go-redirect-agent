@@ -76,6 +76,7 @@ WantedBy=multi-user.target
 
 EOF
 
+systemctl daemon-reload
 systemctl enable go-redirect-agent
 systemctl start go-redirect-agent
 
