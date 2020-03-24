@@ -233,8 +233,10 @@ func installService(name, desc string) error {
 	defer s.Close()
 	err = eventlog.InstallAsEventCreate(name, eventlog.Error|eventlog.Warning|eventlog.Info)
 	if err != nil {
-		s.Delete()
-		return fmt.Errorf("SetupEventLogSource() failed: %s", err)
+		if !strings.Contains(err.Error(), "already exists") {
+			s.Delete()
+			return fmt.Errorf("SetupEventLogSource() failed: %s", err)
+		}
 	}
 	return nil
 }
